@@ -5,6 +5,9 @@ global
     spread-checks 4
     stats socket /var/vcap/data/tcp_router/config/haproxy.sock user vcap group vcap mode 600 level operator expose-fd listeners
     ssl-default-bind-options ssl-min-ver TLSv1.2
+    <% if p("tcp_router.tls_health_check_ciphers") %>
+        ssl-default-bind-ciphers <%= p("tcp_router.tls_health_check_ciphers") %>
+    <% end %>
 
 defaults
     log global

@@ -74,6 +74,8 @@ properties:
   tcp_router.health_check_port:
     description: "Load balancer in front of TCP Routers should be configured to check the health of TCP Router instances by establishing a TCP connection on this port"
     default: 80
+  tcp_router.tls_health_check_ciphers:
+     description: "Ciphers to use on the TCP Router's TLS health check port"
   tcp_router.tls_health_check_port:
     description: "Load balancer in front of TCP Routers should be configured to check the health of TCP Router instances by establishing a TLS connection on this port"
     default: 443
